@@ -9,6 +9,7 @@ terraform {
 }
 
 provider "google" {
-  project     = "my-project-id"
+  project     = "workshop-test-489801"
   region      = "us-central1"
+  zone        = "us-central1-a"
 }

@@ -1,9 +1,4 @@
 # Configure the Google Cloud provider
-provider "google" {
-  project = "your-gcp-project-id" # TODO: Replace with your actual GCP Project ID
-  region  = "us-central1"
-  zone    = "us-central1-a"
-}
 
 # Create a firewall rule to allow HTTP traffic
 resource "google_compute_firewall" "allow_http" {
@@ -23,7 +18,7 @@ resource "google_compute_firewall" "allow_http" {
 # Create the virtual machine instance
 resource "google_compute_instance" "web_server" {
   name         = "simple-web-server"
-  machine_type = "e2-micro" # Cost-effective instance type
+  machine_type = "e2-micro" 
   tags         = ["web-server"]
 
   boot_disk {
@@ -35,9 +30,8 @@ resource "google_compute_instance" "web_server" {
   network_interface {
     network = "default"
 
-    # The access_config block assigns an ephemeral public IP address
     access_config {
-      // Leave empty to assign an ephemeral IP
+      // emphemeral IP
     }
   }
 
