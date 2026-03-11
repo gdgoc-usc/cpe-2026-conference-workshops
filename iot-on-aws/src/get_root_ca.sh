@@ -1,0 +1,1 @@
+curl https://www.amazontrust.com/repository/AmazonRootCA1.pem > keys/root-CA.crt
