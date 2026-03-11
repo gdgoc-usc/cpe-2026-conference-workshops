@@ -1,17 +1,8 @@
-import torch
 from google.cloud import storage
-from the_net import Net
 
-
-model = Net()
-
-
+bucket_name = 'ai-on-the-cloud-test'
 weight_filename = 'mnist_cnn.pt'
-torch.save(model.state_dict(), weight_filename)
-print(f"Saved weights locally as {weight_filename}")
 
-
-bucket_name = "REPLACE_WITH_YOUR_BUCKET_NAME" 
 
 # --- 3. Connect and Upload ---
 print(f"Connecting to bucket: {bucket_name}...")
