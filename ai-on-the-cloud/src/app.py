@@ -12,4 +12,4 @@ demo = gr.Interface(
 )
 
 # Launch with a public link
-demo.launch(share=True)
+demo.launch(share=True, server_name="0.0.0.0")
