@@ -1,12 +1,10 @@
 #!/bin/bash
 
-aws iot describe-endpoint > /tmp/iotendpoint.json
-iot_endpoint=$(jq -r ".endpointAddress" /tmp/iotendpoint.json)
 echo "Running sample application..."
-python3 main.py \
+python3 generic_example.py \
         --endpoint $iot_endpoint \
-        --cert keys/device-certificate.pem.crt \
-        --key keys/device-private.pem.key \
+        --cert keys/rigney-certificate.pem.crt \
+        --key keys/rigney-private.pem.key \
         --client_id basicPubSub \
-        --topic truck/freezer \
+        --topic rigney/temp \
         --count 0
