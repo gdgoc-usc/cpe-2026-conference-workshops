@@ -3,9 +3,14 @@ import torch.nn as nn
 from google.cloud import storage
 from the_net import Net
 
-BUCKET_NAME = 'your-bucket-name'
 FILE_NAME = 'mnist_cnn.pt'
 
+# Prompt user for bucket name
+BUCKET_NAME = input("Enter your GCS bucket name: ").strip()
+
+if not BUCKET_NAME:
+    print("❌ Error: Bucket name cannot be empty.")
+    exit(1)
 
 print(f"Connecting to bucket: {BUCKET_NAME}...")
 
